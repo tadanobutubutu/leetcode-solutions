@@ -1,0 +1,16 @@
+from typing import List
+
+class Solution:
+    def countNegatives(self, grid: List[List[int]]) -> int:
+        m, n = len(grid), len(grid[0])
+        count = 0
+        row, col = m - 1, 0
+        while row >= 0 and col < n:
+            if grid[row][col] < 0:
+                # All elements to the right of (row, col) in this row are negative
+                count += n - col
+                row -= 1
+            else:
+                col += 1
+        return count
+
