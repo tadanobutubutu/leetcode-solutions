@@ -1,0 +1,14 @@
+from typing import List
+
+class Solution:
+    def getSneakyNumbers(self, nums: List[int]) -> List[int]:
+        seen = set()
+        res = []
+        for x in nums:
+            if x in seen:
+                res.append(x)
+                if len(res) == 2:
+                    return res
+            seen.add(x)
+        return res
+
