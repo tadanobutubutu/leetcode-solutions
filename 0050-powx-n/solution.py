@@ -1,0 +1,20 @@
+class Solution:
+    def myPow(self, x: float, n: int) -> float:
+        if n == 0:
+            return 1.0
+        
+        # 負の指数の処理
+        if n < 0:
+            x = 1.0 / x
+            n = -n
+            
+        res = 1.0
+        current_product = x
+        while n > 0:
+            if n % 2 == 1:
+                res *= current_product
+            current_product *= current_product
+            n //= 2
+            
+        return res
+
