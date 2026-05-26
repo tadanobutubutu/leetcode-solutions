@@ -1,9 +1,10 @@
-SELECT 
-    Person.FirstName,
-    Person.LastName,
-    Address.City,
-    Address.State
+--
+-- @lc app=leetcode id=175 lang=postgresql
+--
+-- [175] Combine Two Tables
+--
+
+SELECT firstName, lastName, city, state
 FROM Person
-LEFT JOIN Address
-ON Person.PersonId = Address.PersonId;
+LEFT JOIN Address ON Person.personId = Address.personId;
 
